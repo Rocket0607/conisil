@@ -1,0 +1,1187 @@
+<html>
+  <head>
+    <title>Conisil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+      @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+      @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap");
+
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 8vh;
+        transition: background 0.5s;
+        background-color: transparent;
+        position: fixed;
+        width: 100%;
+        font-family: roboto;
+        font-weight: 500;
+      }
+      .brand {
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white;
+        letter-spacing: 2.5px;
+        display: none;
+      }
+      .brand a {
+        text-decoration: none;
+        color: white;
+      }
+      .nav-content {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        letter-spacing: 1.5px;
+      }
+      .nav-content li {
+        list-style: none;
+      }
+      .nav-content a {
+        text-decoration: none;
+        list-style: none;
+        color: white;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+      .nav-scroll {
+        background-color: rgba(0, 0, 0, 0.945);
+        color: white;
+      }
+      .nav-scroll a {
+        color: white;
+      }
+      .header-stuff {
+        width: 100%;
+        height: 100%;
+        background-position: -300px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-image: url("darkest_code.jpg");
+        text-transform: uppercase;
+        color: white;
+        text-align: center;
+        padding-top: 40%;
+        font-size: 25px;
+        font-family: roboto;
+        font-weight: 500;
+        letter-spacing: 2.25px;
+      }
+      @keyframes changing-text {
+        33% {
+          content: "App Developer";
+        }
+        66% {
+          content: "Web Developer";
+        }
+      }
+      .animated {
+        padding-top: 35px;
+      }
+      .animated::after {
+        z-index: 5;
+        font-size: 30px;
+        content: "Programmer";
+        animation: changing-text 5s infinite;
+      }
+      .about-head {
+        text-transform: uppercase;
+        font-size: 35px;
+        padding-top: 5%;
+        text-align: center;
+        color: rgb(48, 58, 61);
+        font-family: roboto;
+      }
+      .about-grid {
+        display: grid;
+        width: 100%;
+        margin-top: 2%;
+        color: rgb(48, 58, 61);
+      }
+      .about-picture {
+        width: 100%;
+        height: auto;
+      }
+      #me-pic {
+        width: 150px;
+        border-radius: 1000px 1000px 1000px;
+        display: inline;
+        margin-right: auto;
+        margin-left: 33.5%;
+      }
+      .about-para {
+        font-family: raleway;
+        font-size: 18px;
+        word-spacing: 2px;
+        letter-spacing: 1px;
+        line-height: 30px;
+        padding: 15px 10px 10px 10px;
+        text-align: center;
+        margin-left: 40px;
+        margin-right: 40px;
+      }
+      .skills-head {
+        text-align: center;
+        margin-top: 150px;
+        font-size: 35px;
+        text-transform: uppercase;
+        color: rgb(48, 58, 61);
+        font-family: roboto;
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding-top: 100px;
+        font-size: 30px;
+        text-align: center;
+        font-family: roboto;
+        font-weight: 500;
+        text-transform: uppercase;
+        column-width: 30%;
+        align-items: center;
+        grid-template-rows: auto auto auto;
+        row-gap: 100px;
+        margin-top: 50px;
+        color: rgb(48, 58, 61);
+      }
+      @keyframes elevate {
+        from {
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+        }
+        to {
+          box-shadow: 0px 0px 50px rgba(34, 34, 34, 0.315);
+        }
+      }
+      @keyframes unelevate {
+        from {
+          box-shadow: 0px 0px 50px rgba(34, 34, 34, 0.315);
+        }
+        to {
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+        }
+      }
+      .skill {
+        padding: 50px 50px 50px 50px;
+        height: auto;
+        width: 75%;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        overflow: hidden;
+        animation: unelevate 1s forwards;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .skill:hover {
+        animation: elevate 1s forwards;
+      }
+      #python {
+        margin-top: -65px;
+        width: 250px;
+        height: auto;
+        display: none;
+      }
+      .skill2 {
+        padding: 20px 50px 50px 50px;
+        height: auto;
+        width: 75%;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        overflow: hidden;
+        animation: unelevate 1s forwards;
+      }
+      .skill2:hover {
+        animation: elevate 1s forwards;
+      }
+      #website {
+        margin-top: -25px;
+        width: 125px;
+        height: auto;
+        padding-bottom: 10px;
+        display: none;
+      }
+      #app {
+        margin-top: -20px;
+        width: 65px;
+        height: auto;
+        padding-bottom: 10px;
+        display: none;
+      }
+      .skill-para {
+        font-size: 20px;
+        font-weight: 100;
+        margin-top: 25px;
+        text-transform: capitalize;
+        font-family: raleway;
+      }
+      .projects-head {
+        text-transform: uppercase;
+        padding-top: 10%;
+        text-align: center;
+        font-size: 35px;
+        color: rgb(48, 58, 61);
+        font-family: roboto;
+      }
+      .projects-sub-head1 {
+        text-transform: uppercase;
+        padding-top: 10%;
+        text-align: center;
+        font-size: 30px;
+        color: rgb(48, 58, 61);
+        font-weight: normal;
+        font-family: roboto;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding-top: 10%;
+        color: rgb(48, 58, 61);
+        font-size: 30px;
+        font-weight: bold;
+        grid-template-rows: auto auto auto;
+        row-gap: 100px;
+        font-family: source sans pro;
+        letter-spacing: 1px;
+        line-height: 30px;
+        word-spacing: 3px;
+      }
+      .project {
+        padding: 50px 50px 50px 50px;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+        width: 75%;
+        text-align: center;
+        border-radius: 25px;
+        animation: unelevate 1s forwards;
+      }
+      .project:hover {
+        animation: elevate 1s forwards;
+      }
+      .project a {
+        text-decoration: none;
+        text-decoration-color: none;
+        color: rgb(48, 58, 61);
+      }
+      #projectText1 {
+        font-size: 20px;
+        font-weight: 100;
+        margin-top: 25px;
+        text-transform: capitalize;
+      }
+      #projectText2 {
+        font-size: 20px;
+        font-weight: 100;
+        margin-top: 25px;
+        text-transform: capitalize;
+      }
+      #projectText3 {
+        font-size: 20px;
+        font-weight: 100;
+        margin-top: 25px;
+        text-transform: capitalize;
+      }
+      #projectText4 {
+        font-size: 20px;
+        font-weight: 100;
+        margin-top: 25px;
+        text-transform: capitalize;
+      }
+      .contacts {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        background-color: black;
+        width: 100%;
+        height: 30%;
+        color: white;
+        justify-items: center;
+        align-items: center;
+        font-family: source sans pro;
+        font-size: 20px;
+        background-color: rgb(30, 30, 30);
+        font-weight: lighter;
+        letter-spacing: 2px;
+      }
+      .contact {
+        border: solid;
+        padding: 15px 15px 15px 15px;
+        color: rgb(121, 167, 204);
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      #contact {
+        text-transform: uppercase;
+        color: rgb(230, 230, 230);
+        font-weight: bolder;
+        font-size: 35px;
+      }
+      @keyframes change_background_stuff_contact {
+        to {
+          background-color: rgb(121, 167, 204);
+          color: rgb(30, 30, 30);
+        }
+      }
+
+      @keyframes change_background_stuff_contact_a {
+        to {
+          color: rgb(30, 30, 30);
+        }
+      }
+      .contact a {
+        text-decoration: none;
+        color: rgb(121, 167, 204);
+      }
+      .contact:hover {
+        animation: change_background_stuff_contact 1s forwards;
+      }
+      .contact:hover a {
+        animation: change_background_stuff_contact_a 1s forwards;
+      }
+      @media only screen and (min-width: 915px) {
+        * {
+          margin: 0px;
+          padding: 0px;
+          box-sizing: border-box;
+          scroll-behavior: smooth;
+          overflow-x: hidden;
+        }
+        .nav {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          min-height: 8vh;
+          transition: background 0.5s;
+          background-color: transparent;
+          position: fixed;
+          width: 100%;
+          font-family: roboto;
+          font-weight: 500;
+        }
+        .brand {
+          font-size: 25px;
+          font-weight: bold;
+          text-transform: uppercase;
+          color: white;
+          letter-spacing: 2.5px;
+          display: block;
+        }
+        .brand a {
+          text-decoration: none;
+          color: white;
+        }
+        .nav-content {
+          display: flex;
+          justify-content: space-around;
+          width: 50%;
+          margin-right: -10%;
+          letter-spacing: 1.5px;
+        }
+        .nav-content li {
+          list-style: none;
+        }
+        .nav-content a {
+          text-decoration: none;
+          list-style: none;
+          color: white;
+          font-weight: 500;
+          text-transform: uppercase;
+          font-size: 17px;
+        }
+        .nav-scroll {
+          background-color: rgba(0, 0, 0, 0.945);
+          color: white;
+        }
+        .nav-scroll a {
+          color: white;
+        }
+        .header-stuff {
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-image: url("darken_code.jpg");
+          text-transform: uppercase;
+          color: white;
+          text-align: center;
+          padding-top: 20%;
+          font-size: 40px;
+          font-family: roboto;
+          font-weight: 500;
+          letter-spacing: 2.25px;
+          background-position: 0px;
+        }
+        @keyframes changing-text {
+          33% {
+            content: "App Developer";
+          }
+          66% {
+            content: "Web Developer";
+          }
+        }
+        .animated::after {
+          z-index: 5;
+          font-size: 40px;
+          content: "Programmer";
+          animation: changing-text 5s infinite;
+        }
+        .about-head {
+          text-transform: uppercase;
+          font-size: 35px;
+          padding-top: 5%;
+          text-align: center;
+          color: rgb(48, 58, 61);
+          font-family: roboto;
+        }
+        .about-grid {
+          display: grid;
+          width: 100%;
+          margin-top: 2%;
+          color: rgb(48, 58, 61);
+        }
+        .about-picture {
+          width: 100%;
+          height: auto;
+        }
+        #me-pic {
+          width: 15%;
+          height: auto;
+          border-radius: 1000px 1000px 1000px;
+          display: block;
+          margin-right: auto;
+          margin-left: auto;
+        }
+        .about-para {
+          font-family: raleway;
+          font-size: 23px;
+          word-spacing: 5px;
+          letter-spacing: 1px;
+          line-height: 45px;
+          padding: 15px 10px 10px 10px;
+          text-align: center;
+          margin-left: 100px;
+          margin-right: 100px;
+        }
+        .skills-head {
+          text-align: center;
+          margin-top: 150px;
+          font-size: 40px;
+          text-transform: uppercase;
+          color: rgb(48, 58, 61);
+          font-family: roboto;
+        }
+        .skills-grid {
+          display: grid;
+          grid-template-columns: 30% 30%;
+          justify-items: center;
+          padding-top: 100px;
+          font-size: 30px;
+          text-align: center;
+          font-family: roboto;
+          font-weight: 500;
+          text-transform: uppercase;
+          column-width: 30%;
+          align-items: center;
+          grid-template-rows: auto auto auto;
+          row-gap: 100px;
+          margin-right: -65%;
+          margin-top: 50px;
+          color: rgb(48, 58, 61);
+        }
+        @keyframes elevate {
+          from {
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+          }
+          to {
+            box-shadow: 0px 0px 50px rgba(34, 34, 34, 0.315);
+          }
+        }
+        @keyframes unelevate {
+          from {
+            box-shadow: 0px 0px 50px rgba(34, 34, 34, 0.315);
+          }
+          to {
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+          }
+        }
+        .skill {
+          padding: 50px 50px 50px 50px;
+          column-width: 30%;
+          height: 355px;
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+          border-radius: 20px;
+          overflow: hidden;
+          animation: unelevate 1s forwards;
+        }
+        .skill:hover {
+          animation: elevate 1s forwards;
+        }
+        #python {
+          display: inline;
+        }
+        .skill2 {
+          padding: 50px 50px 50px 50px;
+          column-width: 30%;
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+          border-radius: 20px;
+          overflow: hidden;
+          animation: unelevate 1s forwards;
+        }
+        .skill2:hover {
+          animation: elevate 1s forwards;
+        }
+        #website {
+          padding-bottom: 10px;
+          display: inline;
+        }
+        #app {
+          padding-bottom: 10px;
+          display: inline;
+        }
+        .skill-para {
+          font-size: 20px;
+          font-weight: 100;
+          margin-top: 25px;
+          text-transform: capitalize;
+          font-family: raleway;
+        }
+        .projects-head {
+          text-transform: uppercase;
+          padding-top: 10%;
+          text-align: center;
+          font-size: 40px;
+          color: rgb(48, 58, 61);
+          font-family: roboto;
+        }
+        .projects-sub-head1 {
+          text-transform: uppercase;
+          padding-top: 10%;
+          text-align: center;
+          font-size: 35px;
+          color: rgb(48, 58, 61);
+          font-weight: normal;
+          font-family: roboto;
+        }
+        .projects-grid {
+          display: grid;
+          grid-template-columns: 30% 30%;
+          justify-items: center;
+          margin-right: -65%;
+          padding-top: 10%;
+          color: rgb(48, 58, 61);
+          font-size: 30px;
+          font-weight: bold;
+          grid-template-rows: auto auto auto;
+          row-gap: 100px;
+          font-family: source sans pro;
+          letter-spacing: 1px;
+          line-height: 30px;
+          word-spacing: 3px;
+        }
+        .project {
+          padding: 50px 50px 50px 50px;
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+          text-align: center;
+          border-radius: 25px;
+          animation: unelevate 1s forwards;
+        }
+        .project:hover {
+          animation: elevate 1s forwards;
+        }
+        .project a {
+          text-decoration: none;
+          text-decoration-color: none;
+          color: rgb(48, 58, 61);
+        }
+        #projectText1 {
+          font-size: 20px;
+          font-weight: 100;
+          margin-top: 25px;
+          text-transform: capitalize;
+        }
+        #projectText2 {
+          font-size: 20px;
+          font-weight: 100;
+          margin-top: 25px;
+          text-transform: capitalize;
+        }
+        #projectText3 {
+          font-size: 20px;
+          font-weight: 100;
+          margin-top: 25px;
+          text-transform: capitalize;
+        }
+        #projectText4 {
+          font-size: 20px;
+          font-weight: 100;
+          margin-top: 25px;
+          text-transform: capitalize;
+        }
+        .contacts {
+          display: grid;
+          grid-template-columns: 10% 10% 10%;
+          background-color: black;
+          width: 250%;
+          height: 30%;
+          color: white;
+          justify-items: center;
+          align-items: center;
+          font-family: source sans pro;
+          font-size: 20px;
+          background-color: rgb(30, 30, 30);
+          font-weight: lighter;
+          letter-spacing: 2px;
+          padding-left: 15%;
+        }
+        .contact {
+          border: solid;
+          padding: 15px 15px 15px 15px;
+          color: rgb(121, 167, 204);
+          font-weight: bold;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+        #contact {
+          text-transform: uppercase;
+          color: rgb(230, 230, 230);
+          font-weight: bolder;
+          font-size: 35px;
+        }
+        @keyframes change_background_stuff_contact {
+          to {
+            background-color: rgb(121, 167, 204);
+            color: rgb(30, 30, 30);
+          }
+        }
+
+        @keyframes change_background_stuff_contact_a {
+          to {
+            color: rgb(30, 30, 30);
+          }
+        }
+        .contact a {
+          text-decoration: none;
+          color: rgb(121, 167, 204);
+        }
+        .contact:hover {
+          animation: change_background_stuff_contact 1s forwards;
+        }
+        .contact:hover a {
+          animation: change_background_stuff_contact_a 1s forwards;
+        }
+      }
+      @media only screen and (min-width: 1250px) {
+        * {
+          margin: 0px;
+          padding: 0px;
+          box-sizing: border-box;
+          scroll-behavior: smooth;
+          overflow-x: hidden;
+        }
+        .nav {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          min-height: 8vh;
+          transition: background 0.5s;
+          background-color: transparent;
+          position: fixed;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.9);
+          font-family: roboto;
+          font-weight: 500;
+        }
+        .brand {
+          font-size: 29px;
+          font-weight: bold;
+          text-transform: uppercase;
+          color: rgb(70, 92, 241);
+          letter-spacing: 2.5px;
+          display: block;
+        }
+        .brand a {
+          text-decoration: none;
+          color: rgb(70, 92, 241);
+        }
+        .nav-content {
+          display: flex;
+          justify-content: space-around;
+          width: 45%;
+          margin-right: -10%;
+          letter-spacing: 1.5px;
+        }
+        .nav-content li {
+          list-style: none;
+        }
+        .nav-content a {
+          text-decoration: none;
+          list-style: none;
+          color: white;
+          font-weight: 500;
+          text-transform: uppercase;
+          font-size: 19px;
+        }
+        .nav-scroll {
+          background-color: rgba(0, 0, 0, 0.945);
+          color: white;
+        }
+        .nav-scroll a {
+          color: white;
+        }
+        .header-stuff {
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-image: url("pexels-edward-jenner-4031818.jpg");
+          color: rgb(70, 92, 241);
+          text-align: center;
+          padding-top: 10.5%;
+          font-size: 40px;
+          font-family: roboto;
+          letter-spacing: 2.25px;
+          background-position: 0px;
+          text-transform: none;
+        }
+        @keyframes changing-text {
+          33% {
+            content: "App Developer";
+          }
+          66% {
+            content: "Web Developer";
+          }
+        }
+        .animated::after {
+          z-index: 5;
+          font-size: 50px;
+          content: "Programmer";
+          animation: changing-text 5s infinite;
+        }
+        .about-head {
+          text-transform: uppercase;
+          font-size: 35px;
+          padding-top: 5%;
+          text-align: center;
+          color: rgb(48, 58, 61);
+          font-family: roboto;
+        }
+        .about-grid {
+          display: grid;
+          width: 100%;
+          margin-top: 2%;
+          color: rgb(48, 58, 61);
+        }
+        .about-picture {
+          width: 100%;
+          height: auto;
+        }
+        #me-pic {
+          width: 15%;
+          height: auto;
+          border-radius: 1000px 1000px 1000px;
+          display: block;
+          margin-right: auto;
+          margin-left: auto;
+        }
+        .about-para {
+          font-family: raleway;
+          font-size: 23px;
+          word-spacing: 5px;
+          letter-spacing: 1px;
+          line-height: 45px;
+          padding: 15px 10px 10px 10px;
+          text-align: center;
+          margin-left: 200px;
+          margin-right: 200px;
+        }
+        .skills-head {
+          text-align: center;
+          margin-top: 150px;
+          font-size: 40px;
+          text-transform: uppercase;
+          color: rgb(48, 58, 61);
+          font-family: roboto;
+        }
+        .skills-grid {
+          display: grid;
+          grid-template-columns: 30% 30%;
+          justify-items: center;
+          padding-top: 100px;
+          font-size: 30px;
+          text-align: center;
+          font-family: roboto;
+          font-weight: 500;
+          text-transform: uppercase;
+          column-width: 30%;
+          align-items: center;
+          grid-template-rows: auto auto auto;
+          row-gap: 100px;
+          margin-right: -65%;
+          margin-top: 50px;
+          color: rgb(48, 58, 61);
+        }
+        @keyframes elevate {
+          from {
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+          }
+          to {
+            box-shadow: 0px 0px 50px rgba(34, 34, 34, 0.315);
+          }
+        }
+        @keyframes unelevate {
+          from {
+            box-shadow: 0px 0px 50px rgba(34, 34, 34, 0.315);
+          }
+          to {
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+          }
+        }
+        .skill {
+          padding: 50px 50px 50px 50px;
+          column-width: 30%;
+          width: 50%;
+          height: 355px;
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+          border-radius: 20px;
+          overflow: hidden;
+          animation: unelevate 1s forwards;
+        }
+        .skill:hover {
+          animation: elevate 1s forwards;
+        }
+        #python {
+          display: inline;
+        }
+        .skill2 {
+          padding: 50px 50px 50px 50px;
+          column-width: 30%;
+          width: 50%;
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+          border-radius: 20px;
+          overflow: hidden;
+          animation: unelevate 1s forwards;
+        }
+        .skill2:hover {
+          animation: elevate 1s forwards;
+        }
+        #website {
+          padding-bottom: 10px;
+          display: inline;
+        }
+        #app {
+          padding-bottom: 10px;
+          display: inline;
+        }
+        .skill-para {
+          font-size: 20px;
+          font-weight: 100;
+          margin-top: 25px;
+          text-transform: capitalize;
+          font-family: raleway;
+        }
+        .projects-head {
+          text-transform: uppercase;
+          padding-top: 10%;
+          text-align: center;
+          font-size: 40px;
+          color: rgb(48, 58, 61);
+          font-family: roboto;
+        }
+        .projects-sub-head1 {
+          text-transform: uppercase;
+          padding-top: 10%;
+          text-align: center;
+          font-size: 35px;
+          color: rgb(48, 58, 61);
+          font-weight: normal;
+          font-family: roboto;
+        }
+        .projects-grid {
+          display: grid;
+          grid-template-columns: 30% 30%;
+          justify-items: center;
+          margin-right: -65%;
+          padding-top: 10%;
+          color: rgb(48, 58, 61);
+          font-size: 30px;
+          font-weight: bold;
+          grid-template-rows: auto auto auto;
+          row-gap: 100px;
+          font-family: source sans pro;
+          letter-spacing: 1px;
+          line-height: 30px;
+          word-spacing: 3px;
+        }
+        .project {
+          padding: 50px 50px 50px 50px;
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+          width: 50%;
+          text-align: center;
+          border-radius: 25px;
+          animation: unelevate 1s forwards;
+        }
+        .project:hover {
+          animation: elevate 1s forwards;
+        }
+        .project a {
+          text-decoration: none;
+          text-decoration-color: none;
+          color: rgb(48, 58, 61);
+        }
+        #projectText1 {
+          font-size: 20px;
+          font-weight: 100;
+          margin-top: 25px;
+          text-transform: capitalize;
+        }
+        #projectText2 {
+          font-size: 20px;
+          font-weight: 100;
+          margin-top: 25px;
+          text-transform: capitalize;
+        }
+        #projectText3 {
+          font-size: 20px;
+          font-weight: 100;
+          margin-top: 25px;
+          text-transform: capitalize;
+        }
+        #projectText4 {
+          font-size: 20px;
+          font-weight: 100;
+          margin-top: 25px;
+          text-transform: capitalize;
+        }
+        .contacts {
+          display: grid;
+          grid-template-columns: 10% 10% 10%;
+          background-color: black;
+          width: 150%;
+          height: 30%;
+          color: white;
+          justify-items: center;
+          align-items: center;
+          font-family: source sans pro;
+          font-size: 20px;
+          background-color: rgb(30, 30, 30);
+          font-weight: lighter;
+          letter-spacing: 2px;
+          padding-left: 35%;
+        }
+        .contact {
+          border: solid;
+          padding: 15px 15px 15px 15px;
+          color: rgb(121, 167, 204);
+          font-weight: bold;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+        #contact {
+          text-transform: uppercase;
+          color: rgb(230, 230, 230);
+          font-weight: bolder;
+          font-size: 35px;
+        }
+        @keyframes change_background_stuff_contact {
+          to {
+            background-color: rgb(121, 167, 204);
+            color: rgb(30, 30, 30);
+          }
+        }
+
+        @keyframes change_background_stuff_contact_a {
+          to {
+            color: rgb(30, 30, 30);
+          }
+        }
+        .contact a {
+          text-decoration: none;
+          color: rgb(121, 167, 204);
+        }
+        .contact:hover {
+          animation: change_background_stuff_contact 1s forwards;
+        }
+        .contact:hover a {
+          animation: change_background_stuff_contact_a 1s forwards;
+        }
+        .button {
+            background-color: #047eaa; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-family: roboto;
+        }
+      }
+    </style>
+    <script>
+      function afterScroll() {
+        let nav = document.querySelector(".nav");
+        let links = document.querySelectorAll(".nav-content a");
+
+        if (window.pageYOffset > 0) {
+          nav.classList.add("nav-scroll");
+          links.classList.add("nav-scroll");
+        } else {
+          nav.classList.remove("nav-scroll");
+          links.classList.remove("nav-scroll");
+        }
+      }
+      window.addEventListener("scroll", afterScroll);
+
+      function projectsText(element, aboutText) {
+        let x = document.querySelector(element);
+        let y = document.createElement("p");
+        y.appendChild(document.createTextNode(aboutText));
+        x.appendChild(y);
+        y.style.animation = "open_project_text 1s";
+        window.scroll();
+      }
+      function removeProjectsText(element) {
+        let x = document.querySelector(element);
+        x.innerHTML = "";
+      }
+    </script>
+    <link rel="icon" href="./rkLogo.png" />
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="brand">
+        <a href="#">conisil</a>
+      </div>
+      <ul class="nav-content">
+        <li><a href="#about">The Team</a></li>
+        <li><a href="#skills">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-stuff">
+      <h1 class="header-text-1">Providing the Best </h1>
+      <h1 class="header-text-2">Online Medical Consultation</h1
+      <br />
+      <br />
+      <button class="button">Make an Appointment</button>
+      <!-- <h2 class="animated"></h2> -->
+    </div>
+    <!-- <div class="about-full">
+      <h3 class="about-head" id="about">About Me</h3>
+      <div class="about-grid">
+        <div class="about-picture">
+          <img src="me.jpg" alt="Rohit Koneru" id="me-pic" />
+        </div>
+        <div class="about-para">
+	  I'm Rohit. I'm 14
+          years old and in grade 9. I love to code, read books. I can create
+          websites with html, css and javascript. I also know Python and Flutter. I'm
+          really interested in the topic of AI and have done some projects with
+          the tensorflow framework by Google. I've made a convolutional network
+          that can classify cats and dogs, one that can identify numbers and one
+          that can detect if you have pneumonia or not, just by looking at an
+          x-ray of your chest! I'm also very interested in the topic of genomics
+          and synthetic biology.
+        </div>
+      </div>
+    </div>
+    <div class="skills-full">
+      <h2 class="skills-head" id="skills">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">
+          <img src="python_logo.jpg" alt="Python" id="python" />
+          Python
+          <div class="skill-para">
+            I am fluent in the Python programming language.
+          </div>
+        </div>
+        <div class="skill2">
+          <img src="website_icon.png" alt="Website" id="website" />
+          <br />
+          Web Development
+          <div class="skill-para">
+            I love making websites with HTML, CSS and Javascript.
+          </div>
+        </div>
+        <div class="skill2">
+          <img src="phone_icon.png" alt="Mobile App" id="app" />
+          <br />
+          App <br />
+          Development
+          <div class="skill-para">
+            I also love to making apps. Desktop and mobile using Flutter.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="projects-full">
+      <h2 class="projects-head" id="projects">Projects</h2>
+      <h2 class="projects-sub-head1" id="projects">Coding Projects</h2>
+      <div class="projects-grid">
+        <div class="project">
+          <a href="https://github.com/Rocket0607/Encrypt">Encrypt</a>
+          <div id="projectText1">
+            This app written will encrypt any message for you. After sending
+            that message to another person, they can use the app to decrypt it.
+          </div>
+        </div>
+        <div class="project">
+          <a href="https://github.com/Rocket0607/Pneumonia-Model">Pneumonia?</a>
+          <div id="projectText2">
+            This Machine Learning model built with tensorflow can tell if you
+            have pneumonia or not in a few seconds just by looking at your
+            x-ray.
+          </div>
+        </div>
+        <div class="project">
+          <a href="https://github.com/Rocket0607/Encrypt">Weather</a>
+          <div id="projectText4">
+            A simple way to tell the current temperature, humidity, wind speed
+            and the phase of the moon (cause why not?).
+          </div>
+        </div>
+      </div>
+      <h2 class="projects-sub-head1" id="projects">Articles</h2>
+      <div class="projects-grid">
+        <div class="project">
+          <a href="https://medium.com/@rohitkoneru2510/nanosensors-an-overview-4fea910431b4?sk=130d436459b43fa812260bf6a15ab183"
+            >Nanosensors - An Overview</a
+          >
+          <div id="projectText1">
+            This is an article explaining nanosensors. What they are, what they
+            do, how they are made and how they can be applied in the word.
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- <div class="contacts">
+      <div></div>
+      <h1 id="contact"><strong>contact</strong></h1>
+      <div></div>
+      <div class="contact">
+        <a href="mailto:rohitkoneru2510@gmail.com">Gmail</a>
+      </div>
+      <div class="contact">
+        <a href="https://www.linkedin.com/in/rohit-koneru-5b0661196/"
+          >Linkdeln</a
+        >
+      </div>
+      <div class="contact">
+        <a href="https://github.com/rocket0607">Github</a>
+      </div>
+    </div> -->
+  </body>
+</html>
